@@ -1,0 +1,346 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+/* 
+#id-mainTable{
+    min-height: 100vh;
+    background: url(../Image/1.jpg) center/ cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.repo{
+    min-height: 100vh;
+    /* background:center/ cover; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+table, th, td{
+    border-collapse: collapse;
+    padding: 1rem;
+    padding-inline-start: 4rem;
+    text-align: left;
+} 
+
+section.table{
+    /*  */
+    margin-left: 8px;
+    margin-top: 4px;
+    /*  */
+    width: 97vw;
+    height: 90vh;
+    background-color: #fff5;
+
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+
+    overflow: hidden;
+}
+
+.table_header{
+    width: 100%;
+    height: 10%;
+    background-color: rgba(255, 255, 255, 0.267);
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start; */
+}
+
+.table_header .input-group{
+    width: 35%;
+    height: 100%;
+    background-color: #fff5;
+    padding: 0 .8rem;
+    border-radius: 2rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*  */
+    margin-right: 370px;
+    /*  */
+
+    transition: .2s;
+}
+
+.table_header .input-group:hover{
+    width: 45%;
+    background-color: #fff8;
+    box-shadow: 0 .1rem .4rem #0002;
+}
+.table_header .input-group img{
+    width: 1.2rem;
+    height: 1.3rem;
+}
+
+.table_header .input-group input{
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.table_body{
+    width: 94%;
+    height: calc(89% -.8rem);
+
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: .8rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+}
+
+.table_body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table_body::-webkit-scrollbar-thumb{
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table_body:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+
+thead th{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+}
+
+tbody tr:nth-child(even){
+    background-color: #0000000b;
+}
+tbody tr{
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0% ;
+}
+
+tbody tr.hide{
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img{
+    transition: .2s ease-in-out .5s;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+   padding: 0;
+   font: 0 /0 sans-serif;
+   transition: .2s ease-in-out .5s; 
+}
+
+tbody tr.hide td img{
+    width: 0;
+    height: 0;
+    transition: .2s ease-in-out;
+}
+
+tbody tr:hover{
+    background-color: #fff6 !important;
+}
+select {
+    appearance: none;
+}
+
+#autocomplete {
+
+    width: 250px;
+    float: left;
+    margin-inline-start: 900px;
+    position: relative;
+}
+
+.testname {
+    width: 100%;
+    height: 36px;
+    font-size: 18px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    /* border: 1px solid #e58940; */
+    outline: 0;
+    box-sizing: border-box;
+    margin-left: -10px;
+}
+/* 
+.list {
+    width: 100%;
+    position: absolute;
+    border: 1px solid #4d6e87;
+    display: none;
+    background-color: #4d6e87;
+    margin-inline-start: -9px;
+}
+
+.list ul {
+    list-style: none;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+
+}
+
+.list ul li {
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
+.list ul li:hover {
+    background: #d0e4f4; 
+}*/
+
+.status{
+    padding: .4rem 0;
+    border-radius: 2rem;
+    text-align: center;
+    
+}
+
+.status.InCollege{
+    background-color: #86e49d;
+    color: #006b21;
+}
+
+.status.Vacation{
+    background-color: #6ad4d4;
+    color: #0f6e71;
+}
+
+.status.OutCollege{
+    background-color: #d893a3;
+    color: #b30021;
+}
+
+@media (max-width: 1000px){
+    td:not(:first-of-type){
+        min-width: 12.1rem;
+    }
+}
+
+.btn_export {
+padding: 6px 8px;
+  margin-left: 1rem;
+  /* margin-bottom: 2rem; */
+  font-size: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0px 4px 0px #0072ff;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn_export:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 0px #0072ff;
+}
+
+.btn_export:active {
+  transform: translateY(0px);
+  box-shadow: none;
+  background-image: linear-gradient(to bottom right, #0072ff, #00c6ff);
+}
+
+.btn_export:before,
+.btn_export:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.btn_export:before {
+  top: -3px;
+  left: -3px;
+  border-radius: 40px;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+}
+
+.btn_export:after {
+  bottom: -3px;
+  right: -3px;
+  border-radius: 40px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+}
+
+.btn_pdf {
+padding: 6px 8px;
+right: 8rem;
+  /* margin-bottom: 2rem; */
+  font-size: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #f46426, #ff7b00);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0px 4px 0px #ff7b00;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn_pdf:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 0px #f46426;
+}
+
+.btn_pdf:active {
+  transform: translateY(0px);
+  box-shadow: none;
+  background-image: linear-gradient(to bottom right, #ff7b00, #f46426);
+}
+
+.btn_pdf:before,
+.btn_pdf:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.btn_pdf:before {
+  top: -3px;
+  left: -3px;
+  border-radius: 40px;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+}
+
+.btn_pdf:after {
+  bottom: -3px;
+  right: -3px;
+  border-radius: 40px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+}
+
