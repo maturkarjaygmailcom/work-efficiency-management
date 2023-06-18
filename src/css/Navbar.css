@@ -8,7 +8,8 @@
   body {
     height: 100vh;
     background-color: #000;
-    background-image: url(../Image/4.jpg);
+    background-image: url(../Image/html_table.jpg);
+    /* background-image: url(../Image/4.jpg); */
     background-size: cover;
     background-position: center;
 }
@@ -47,13 +48,23 @@ header{
     font-size: 1.5rem;
     display: flex;
     gap: 2rem;
+    font-weight: 550;
 }
 
 .navbar .links{
     display: flex;
-    gap: 2rem;
+    gap: 29px;
+    font-size: 19px;
+    font-weight: 400;
+    color: rgb(15, 16, 16);
+    margin-left: 19rem;
+    margin-top: 14px;
 }
 
+.navbar .links li:hover{
+    color: #fff;
+    scale: 0.95;
+}
 .navbar .toggle_btn{
     color: #fff;
     font-size: 1.5rem;
@@ -72,6 +83,35 @@ header{
     font-weight: bold;
     cursor: pointer;
     transition: scale 0.2 ease;
+}
+/* Login Button */
+
+.action_btn {
+ padding: 12px 20px;
+ border-radius: 50px;
+ border: 0;
+ background-color: #1b1919c9;
+ box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+ letter-spacing: 1.5px;
+ text-transform: uppercase;
+ font-size: 12px;
+ transition: all .5s ease;
+}
+
+.action_btn:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+   }
+   
+.action_btn:active {
+ letter-spacing: 3px;
+ background-color: hsl(261deg 80% 48%);
+ color: hsl(0, 0%, 100%);
+ box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+ transform: translateY(10px);
+ transition: 100ms;
 }
 
 .action_btn:hover {

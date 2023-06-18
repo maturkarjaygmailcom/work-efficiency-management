@@ -371,6 +371,8 @@ const FacultyList = () => {
 
                     <div className="input-group">
                         <input type="search" placeholder="Search Data..." id="id-serach" className="testname" name="stestname4" onKeyUp={searching1} autoComplete='false' autoFocus />
+                         <img src='../Image/3.png' alt=""/> 
+
                         {/* <img src='Image/3.png' alt="" /> */}
                     </div>
                     <button style={{ "marginInlineStart": "0px" }} id="btn-ins" className='btn btn-danger' onClick={btnInsert}> + </button>
