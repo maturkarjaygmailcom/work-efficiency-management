@@ -364,7 +364,7 @@ const FacultyList = () => {
             {/* <input type="text" id="id-search" onKeyUp={searching1} className="testname" name="stestname4" placeholder="search here..." autoComplete="false" /> */}
 
 
-            <section className="table" id="id-mainTable">
+            <section className="tableFaculty" id="id-mainTable">
 
                 <section className="table_header" >
                     <h1>FacultyList</h1>

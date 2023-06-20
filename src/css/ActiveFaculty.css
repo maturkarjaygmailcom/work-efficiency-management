@@ -30,13 +30,14 @@ table, th, td{
     text-align: left;
 } 
 
-section.table{
+section.tableActive{
     /*  */
-    margin-left: 8px;
-    margin-top: 4px;
-    /*  */
+    margin-top: 8px;
+    margin-left: 20px;
+    height: 89vh;
+        /*  */
     width: 97vw;
-    height: 90vh;
+    height: 89vh;
     background-color: #fff5;
 
     backdrop-filter: blur(7px);

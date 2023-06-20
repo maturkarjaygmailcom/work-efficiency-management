@@ -102,11 +102,11 @@ const locationToLogin=useNavigate()
         <>
 
             <div className="box">
-                <div className="container">
+                <div className="containerReg">
 
                     <div className="top">
 
-                        <header>Registration</header>
+                        <header className="headerReg">Registration</header>
                     </div>
 
                     <div className="input-field">

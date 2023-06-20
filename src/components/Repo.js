@@ -321,7 +321,7 @@ const Report1 = () => {
       </section>
 
 
-      <section className="table" id="id-mainTable">
+      <section className="tableRepo" id="id-mainTable">
 
         <section className="table_headerRepo" >
           <h1>REPORT</h1>

@@ -28,7 +28,7 @@ const NavBar = () => {
           <ul className="links">
           
           <li className="nav-item">
-                <NavLink className="nav-link" ariaCurrent="page" to="/ActiveFacultyList">ActiveFacultyList</NavLink>
+                <NavLink className="nav-link" to="/ActiveFacultyList">ActiveFacultyList</NavLink>
               </li>
 
               <li className="nav-item">
@@ -46,16 +46,16 @@ const NavBar = () => {
 
 
           </ul>
-          <a href="#" className="action_btn">Log in</a>
+          <NavLink to="/" className="action_btn">Log in</NavLink>
           <div className="toggle_btn">
             <i className="fa-solid fa-bars"></i>
           </div>
         </div>
 
-        <div className="dropdown_menu ">
+        {/* <div className="dropdown_menu "> */}
 
           {/* <li><a href="#" className="action_btn">Get started</a></li> */}
-        </div>
+        {/* </div> */}
       </header>
 
 

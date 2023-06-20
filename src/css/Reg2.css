@@ -36,11 +36,13 @@ body {
     min-height: 90vh;
 }
 
-.container {
+.containerReg {
     width: 350px;
     display: flex;
     flex-direction: column;
     padding: 0 15px 0 15px;
+    margin-top: 0px;
+    height: 551px;
 
 }
 
@@ -62,7 +64,7 @@ header {
 
 .input-field .input {
     height: 45px;
-    width: 87%;
+    width: 100%;
     border: none;
     border-radius: 30px;
     color: #fff;
@@ -70,6 +72,10 @@ header {
     padding: 0 0 0 45px;
     background: rgba(255, 255, 255, 0.1);
     outline: none;
+}
+
+.headerReg {
+    margin-top: 20px;
 }
 
 i {
@@ -94,6 +100,7 @@ i {
     background: rgba(255, 255, 255, 0.7);
     cursor: pointer;
     transition: .3s;
+    margin-top: 27px;
 }
 
 .submit:hover {

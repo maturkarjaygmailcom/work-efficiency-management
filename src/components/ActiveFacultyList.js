@@ -93,7 +93,7 @@ const ActiveFaculty = () => {
     return (
         <>
 
-            <section className="table" id="id-mainTable" >
+            <section className="tableActive" id="id-mainTable" >
 
                 <section className="table_headerActive" >
                     <h1>Dashboard</h1>

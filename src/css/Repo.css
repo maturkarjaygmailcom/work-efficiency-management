@@ -14,7 +14,7 @@
 } */
 
 .repo{
-    min-height: 100vh;
+    min-height: 93vh;
     /* background:center/ cover; */
 
     display: flex;
@@ -30,11 +30,12 @@ table, th, td{
     text-align: left;
 } 
 
-section.table{
+section.tableRepo{
     /*  */
     margin-left: 8px;
-    margin-top: 4px;
-    /*  */
+    margin-left: 20px;
+    height: 89vh;
+        /*  */
     width: 97vw;
     height: 90vh;
     background-color: #fff5;
