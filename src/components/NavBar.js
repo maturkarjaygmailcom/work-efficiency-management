@@ -52,6 +52,8 @@ const NavBar = () => {
           </div>
         </div>
 
+
+
         {/* <div className="dropdown_menu "> */}
 
           {/* <li><a href="#" className="action_btn">Get started</a></li> */}
