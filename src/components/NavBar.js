@@ -26,22 +26,22 @@ const NavBar = () => {
         <div className="navbar">
           <div className="logo"><a href="">Work-Efficiency</a></div>
           <ul className="links">
-          
-          <li className="nav-item">
-                <NavLink className="nav-link" to="/ActiveFacultyList">ActiveFacultyList</NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/FacultyList">FacultyList</NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/PunchingOut">PunchingOut</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/Report122">Report</NavLink>
-              </li>
             
+            <li className="nav-item">
+                  <NavLink className="nav-link" to="/ActiveFacultyList">Dashboard</NavLink>
+                </li>
+
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/FacultyList">FacultyList</NavLink>
+                </li>
+
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/PunchingOut">PunchingOut</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/Report122">Report</NavLink>
+              </li>
+            <div className="animation start-dashboard"></div>      
 
 
 

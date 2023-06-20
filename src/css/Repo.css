@@ -60,20 +60,17 @@ section.tableRepo{
 }
 
 .table_headerRepo .input-group{
-    width: 95%;
+    width: 35%;
     height: 100%;
     background-color: #fff5;
     padding: 0 .8rem;
     border-radius: 2rem;
-    
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    align-items: center; */
-   margin-left: 250px;
-   margin-right: 300px;
-   
-
+    align-items: center;
+    margin-left: 19%;
     transition: .2s;
+   
 }
 
 .table_headerRepo .input-group:hover{
@@ -245,7 +242,7 @@ select {
 
 .btn_export {
 padding: 8px 8px;
-  margin-left: 1rem;
+  margin-left: 14rem;
   /* margin-bottom: 2rem; */
   font-size: 8px;
   font-weight: bold;
