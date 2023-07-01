@@ -1,5 +1,5 @@
 import "./App.css";
-import LoginForm from "./components/LoginForm";
+import LoginForm,{val1} from "./components/LoginForm";
 import Registration from "./components/Registration";
 import ActiveFacultyList from "./components/ActiveFacultyList";
 import FacultyList from "./components/FacultyList";
@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 
 function App() {
+  console.log(val1);
   return (
     <>
       <NavBar />

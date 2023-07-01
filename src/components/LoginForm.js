@@ -2,8 +2,9 @@ import React from 'react'
 import '../css/LoginForm.css'
 import { NavLink, useNavigate } from 'react-router-dom';
 
+const val1 = 11;
 
-export default function LoginForm() {
+const LoginForm=() => {
 
   //fetch reg data
 
@@ -45,6 +46,13 @@ export default function LoginForm() {
                 console.log("w")
                 // document.location.href = "http://localhost/jay/html/fecultyList.html"
                 locationToActivePage("/ActiveFacultyList")
+
+                
+                // document.getElementsByClassName("links").show();
+                // try
+                // document.getElementsByClassName("links").removeClass('visible').addClass('invisible');
+                // document.getElementsByClassName("links").visibility = "visible";
+
               }
             });
           }
@@ -72,11 +80,11 @@ export default function LoginForm() {
           </div>
 
           <div className="input-field">
-            <input type="Password" className="input" placeholder="Password" id="id-password" color='white' required/>
+            <input type="Password" className="input" placeholder="Password" id="id-password" color='white' required />
             {/* <i className='bx bx-lock-alt'></i> */}
           </div>
 
-          
+
 
 
           <div id="id-alert" className='alert'></div>
@@ -106,3 +114,5 @@ export default function LoginForm() {
   )
 }
 
+export default LoginForm;
+export { val1 };

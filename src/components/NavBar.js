@@ -1,12 +1,51 @@
-import React from "react";
+import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import '../css/Navbar.css'
 
+const NavBar = (props) => {
+  const visiNav = '"hidden"';
 
-const NavBar = () => {
-
+  console.log(visiNav);
+  // document.getElementsByClassName("links").visibility = "hidden";
   return (
     <>
+      <header className="haderNav">
+        <div className="navbar">
+          <div className="logo"><a href="">Work-Efficiency</a></div>
+          <ul className="links" >
+
+            <li className="nav-item">
+              <NavLink ActiveClassName="navLink" className="nav-link" to="/ActiveFacultyList" >ActiveFacultyList</NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink ActiveClassName="navLink" className="nav-link" to="/FacultyList" >FacultyList</NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink ActiveClassName="navLink" className="nav-link" to="/PunchingOut" >PunchingOut</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink ActiveClassName="navLink" className="nav-link" to="/Report122" >Report</NavLink>
+            </li>
+
+
+
+
+          </ul>
+          <NavLink to="/" className="action_btn">Log in</NavLink>
+          <div className="toggle_btn">
+            <i className="fa-solid fa-bars"></i>
+          </div>
+        </div>
+
+
+        {/* <div className="dropdown_menu "> */}
+
+        {/* <li><a href="#" className="action_btn">Get started</a></li> */}
+        {/* </div> */}
+      </header>
+
       {/* <NavLink  to="/" >home</NavLink>
             <br/>
             <NavLink to="/nev" >nev</NavLink>
@@ -19,46 +58,6 @@ const NavBar = () => {
             <br/>
 
             <NavLink to="/sidebar" >sidebar</NavLink>   */}
-
-
-
-      <header>
-        <div className="navbar">
-          <div className="logo"><a href="">Work-Efficiency</a></div>
-          <ul className="links">
-          
-          <li className="nav-item">
-                <NavLink className="nav-link" to="/ActiveFacultyList">ActiveFacultyList</NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/FacultyList">FacultyList</NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/PunchingOut">PunchingOut</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/Report122">Report</NavLink>
-              </li>
-            
-
-
-
-          </ul>
-          <NavLink to="/" className="action_btn">Log in</NavLink>
-          <div className="toggle_btn">
-            <i className="fa-solid fa-bars"></i>
-          </div>
-        </div>
-
-
-
-        {/* <div className="dropdown_menu "> */}
-
-          {/* <li><a href="#" className="action_btn">Get started</a></li> */}
-        {/* </div> */}
-      </header>
 
 
 

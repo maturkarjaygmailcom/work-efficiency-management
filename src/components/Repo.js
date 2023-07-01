@@ -11,7 +11,7 @@ const Report1 = () => {
 
   useEffect(() => {
     pageload();
-
+    // lastLine();
     // document.getElementById("id-mainTable").style.visibility ="visible";
     // document.getElementById("id-search").focus();
   }, [])
@@ -19,7 +19,7 @@ const Report1 = () => {
   // window.$(document).ready(function () {
   // pageload();
 
-  
+
   // document.body.style.backgroundImage = "url(../Image/1.jpg) center/ cover";
   // document.body.style.backgroundPosition = "center";
   //     document.body.style.display = "flex";
@@ -123,7 +123,20 @@ const Report1 = () => {
 
           });
 
-
+          lastLine();
+          let totaltime = localStorage.getItem("time")
+          let totalper = localStorage.getItem("totalperson")
+          console.log(totaltime)
+          console.log(totalper)
+          window.$("#id-table").append("<tr>" +
+            "<td>" + totalper + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + totaltime + "</td>" +
+            "</tr>");
         }
 
       }
@@ -163,7 +176,19 @@ const Report1 = () => {
 
           });
 
+          lastLine();
+          let totaltime3 = localStorage.getItem("time")
+          let totalper3 = localStorage.getItem("totalperson")
 
+          window.$("#id-table").append("<tr>" +
+            "<td>" + totalper3 + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + totaltime3 + "</td>" +
+            "</tr>");
         }
 
       }
@@ -204,6 +229,21 @@ const Report1 = () => {
                 "</tr>");
 
             });
+            lastLine();
+            let totaltime1 = localStorage.getItem("time")
+            let totalper1 = localStorage.getItem("totalperson")
+
+            console.log(totaltime1)
+            window.$("#id-table").append("<tr>" +
+              "<td>" + totalper1 + "</td>" +
+              "<td>" + "</td>" +
+              "<td>" + "</td>" +
+              "<td>" + "</td>" +
+              "<td>" + "</td>" +
+              "<td>" + "</td>" +
+              "<td>" + totaltime1 + "</td>" +
+              "</tr>");
+
           }
         }
       });
@@ -248,6 +288,20 @@ const Report1 = () => {
 
           });
 
+          lastLine();
+          let totaltime2 = localStorage.getItem("time")
+          var totalper2 = localStorage.getItem("totalperson")
+
+          window.$("#id-table").append("<tr>" +
+            "<td>" + totalper2 + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + "</td>" +
+            "<td>" + totaltime2 + "</td>" +
+            "</tr>");
+
 
         }
 
@@ -288,36 +342,53 @@ const Report1 = () => {
   // window.$(document).on("change", "#selectMin", fun1);
   // window.$(document).on("change", "#selectDay", days);
 
+  const lastLine = async () => {
+
+    // Get the table element
+    var table = document.getElementById("id-fullTableRepo");
+
+    // Initialize variables for count and total time
+    var totalCount = 0;
+    var totalSeconds = 0;
+    console.log("hi1")
+
+    // Iterate through each row in the table (excluding the header row)
+    for (let i = 1; i < table.rows.length; i++) {
+      let row = table.rows[i];
+
+      // Get the name and increment the total count
+      var name = row.cells[0].innerHTML;
+      totalCount++;
+
+      // Get the time and convert it to seconds
+      var timeParts = row.cells[6].innerHTML.split(":");
+      console.log(timeParts, row)
+      var hours = parseInt(timeParts[0]);
+      var minutes = parseInt(timeParts[1]);
+      var seconds = parseInt(timeParts[2]);
+      var timeInSeconds = (hours * 3600) + (minutes * 60) + seconds;
+      totalSeconds += timeInSeconds;
+      console.log("totalSeconds")
+    }
+    console.log(totalCount)
+    console.log("hi2")
 
 
+    // Convert total time in seconds to "hh:mm:ss" format
+    var formattedTime = new Date(totalSeconds * 1000).toISOString().substr(11, 8);
+
+    // Display the total count and total time in "hh:mm:ss" format in the console
+    // console.log("Total Count: " + totalCount);
+    console.log("Total Time: " + formattedTime);
+    localStorage.setItem("time", formattedTime);
+    localStorage.setItem("totalperson", totalCount);
+  }
+
+  // lastLine();
 
   return (
     <div className='repo'>
       <section>
-        {/* <form>
-
-        <select id="selectMin" onChange={fun1}>
-          <option value="all">All</option>
-          <option value="name">Name</option>
-          <option value="department">Department</option>
-          <option value="date">Date</option>
-          <option value="day">Day</option>
-          <option value="punchInTime">PunchInTime</option>
-          <option value="punchOutTime">PunchOutTime</option>
-          <option value="durations">Duration</option>
-        </select>
-      </form>
-
-      <form>
-
-        <select id="selectDay" onChange={days} style={{ "marginLeft": "60%", "visibility": "hidden" }}>
-          <option value="all">All</option>
-          <option value="today">Today</option>
-          <option value="last-7-days">last 7 days</option>
-          <option value="last-15-days">last 15 days</option>
-          <option value="last-30-days">last 30 days</option>
-        </select>
-      </form> */}
       </section>
 
 
@@ -327,9 +398,33 @@ const Report1 = () => {
           <h1>REPORT</h1>
 
           <div className="input-group">
-            <input type="search" placeholder="Search Data..." id="id-serach" className="testname" name="stestname4" onKeyUp={searching} autoComplete='false' autoFocus  />
+            <input type="search" placeholder="Search Data..." id="id-serach" className="testname" name="stestname4" onKeyUp={searching} autoComplete='false' autoFocus />
             {/* <img src='Image/3.png' alt="" /> */}
           </div>
+          <form>
+
+            <select id="selectMin" onChange={fun1}>
+              <option value="all">All</option>
+              <option value="name">Name</option>
+              <option value="department">Department</option>
+              <option value="date">Date</option>
+              <option value="day">Day</option>
+              <option value="punchInTime">PunchInTime</option>
+              <option value="punchOutTime">PunchOutTime</option>
+              <option value="durations">Duration</option>
+            </select>
+          </form>
+
+          <form>
+
+            <select id="selectDay" onChange={days} style={{ "marginLeft": "60%", "visibility": "hidden" }}>
+              <option value="all">All</option>
+              <option value="today">Today</option>
+              <option value="last-7-days">last 7 days</option>
+              <option value="last-15-days">last 15 days</option>
+              <option value="last-30-days">last 30 days</option>
+            </select>
+          </form>
 
           <button className="btn_export" onClick={tableToExcel} id="btn-excel">Export Excel</button>
           <button id="" onClick={window.print} className="btn_pdf" >Export Pdf</button>
