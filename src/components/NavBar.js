@@ -61,6 +61,47 @@ const NavBar = (props) => {
 
 
 
+{/*
+      <header>
+        <div className="navbar">
+          <div className="logo"><a href="">Work-Efficiency</a></div>
+          <ul className="links">
+            
+            <li className="nav-item">
+                  <NavLink className="nav-link" to="/ActiveFacultyList">Dashboard</NavLink>
+                </li>
+
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/FacultyList">FacultyList</NavLink>
+                </li>
+
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/PunchingOut">PunchingOut</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/Report122">Report</NavLink>
+              </li>
+            <div className="animation start-dashboard"></div>      
+
+
+
+          </ul>
+          <NavLink to="/" className="action_btn">Log in</NavLink>
+          <div className="toggle_btn">
+            <i className="fa-solid fa-bars"></i>
+          </div>
+        </div>
+
+
+        </header>
+
+        {/* <div className="dropdown_menu "> */}
+
+          {/* <li><a href="#" className="action_btn">Get started</a></li> */}
+        {/* </div> */}
+
+  
+
       {/* comment */}
       {/* <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
