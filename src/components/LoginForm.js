@@ -100,7 +100,7 @@ const LoginForm=() => {
                 </div> */}
 
             <div className="two">
-              <label><a href="#">Forgot password?</a></label>
+              {/* <label><a href="#">Forgot password?</a></label> */}
             </div>
             <NavLink to="/Reg">register your self</NavLink>
 

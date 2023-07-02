@@ -399,7 +399,7 @@ const FacultyList = () => {
                         <tbody id="id-table">
 
                             {
-                                (data.status === false) ? <tr><td colspan='7'><h2> Not found</h2></td></tr>
+                                (data.status === false) ? <tr><td colSpan='7'><h2> Not found</h2></td></tr>
                                     :
                                     // document.querySelector("#id-table").html("");
                                     data.map((val, inde) => {

@@ -15,18 +15,18 @@ const NavBar = (props) => {
           <ul className="links" >
 
             <li className="nav-item">
-              <NavLink ActiveClassName="navLink" className="nav-link" to="/ActiveFacultyList" >ActiveFacultyList</NavLink>
+              <NavLink  className="nav-link" to="/ActiveFacultyList" >ActiveFacultyList</NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink ActiveClassName="navLink" className="nav-link" to="/FacultyList" >FacultyList</NavLink>
+              <NavLink  className="nav-link" to="/FacultyList" >FacultyList</NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink ActiveClassName="navLink" className="nav-link" to="/PunchingOut" >PunchingOut</NavLink>
+              <NavLink className="nav-link" to="/PunchingOut" >PunchingOut</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink ActiveClassName="navLink" className="nav-link" to="/Report122" >Report</NavLink>
+              <NavLink className="nav-link" to="/Report122" >Report</NavLink>
             </li>
 
 

@@ -33,7 +33,7 @@ const ActiveFaculty = () => {
             dataType: "json",
             success: function (data) {
                 if (data.status == false) {
-                    window.$("#id-table").append("<tr><td colspan='4'><h2>" + data.message + "</h2></td></tr>")
+                    window.$("#id-table").append("<tr><td colSpan='4'><h2>" + data.message + "</h2></td></tr>")
                 }
                 else {
 
@@ -117,7 +117,7 @@ const ActiveFaculty = () => {
                         <tbody id="id-table">
 
                             {
-                                (data.status === false) ? <tr><td colspan='7'><h2>Data  Not found</h2></td></tr>
+                                (data.status === false) ? <tr><td colSpan='7'><h2>Data  Not found</h2></td></tr>
                                     :
                                     // document.querySelector("#id-table").html("");
                                     data.map((val, inde) => {

@@ -44,7 +44,7 @@ const Report1 = () => {
 
   const fun1 = () => {
     let prefer = document.forms[0].selectMin.value;
-    console.log("Worker");
+    // console.log("Worker");
     if (prefer === "name") {
       namewise(prefer);
       // last7DayCountSum();
@@ -104,7 +104,7 @@ const Report1 = () => {
       dataType: "json",
       success: function (data) {
         if (data.status === false) {
-          window.$("#id-table").append("<tr><td colspan='3'><h2>" + data.message + "</h2></td></tr>")
+          window.$("#id-table").append("<tr><td colSpan='3'><h2>" + data.message + "</h2></td></tr>")
         }
         else {
 
@@ -126,8 +126,8 @@ const Report1 = () => {
           lastLine();
           let totaltime = localStorage.getItem("time")
           let totalper = localStorage.getItem("totalperson")
-          console.log(totaltime)
-          console.log(totalper)
+          // console.log(totaltime)
+          // console.log(totalper)
           window.$("#id-table").append("<tr>" +
             "<td>" + totalper + "</td>" +
             "<td>" + "</td>" +
@@ -158,7 +158,7 @@ const Report1 = () => {
       success: function (data) {
 
         if (data.status === false) {
-          window.$("#id-table").append("<tr><td colspan='3'><h2>" + data.message + "</h2></td></tr>")
+          window.$("#id-table").append("<tr><td colSpan='3'><h2>" + data.message + "</h2></td></tr>")
         }
         else {
           // console.log(data)
@@ -198,7 +198,7 @@ const Report1 = () => {
   // window.$("#id-serach").on("keyup", searching);
 
   function searching() {
-    console.log("Worker")
+    // console.log("Worker")
     window.$("#id-table").html("");               //empty search list
     // var lab_name = window.$(this).val();
 
@@ -210,7 +210,7 @@ const Report1 = () => {
         type: "GET",
         dataType: "json",
         success: function (data) {
-          console.log(data)
+          // console.log(data)
 
           if (data.status === false) {
             //  console.log(data.status)
@@ -233,7 +233,7 @@ const Report1 = () => {
             let totaltime1 = localStorage.getItem("time")
             let totalper1 = localStorage.getItem("totalperson")
 
-            console.log(totaltime1)
+            // console.log(totaltime1)
             window.$("#id-table").append("<tr>" +
               "<td>" + totalper1 + "</td>" +
               "<td>" + "</td>" +
@@ -257,7 +257,7 @@ const Report1 = () => {
   }
 
   const todayData = (prefer1) => {
-    console.log(prefer1)
+    // console.log(prefer1)
     let obj = { "sname": prefer1 }
     let jsondata = JSON.stringify(obj);
 
@@ -270,7 +270,7 @@ const Report1 = () => {
       success: function (data) {
 
         if (data.status === false) {
-          window.$("#id-table").append("<tr><td colspan='7'><h2>" + data.message + "</h2></td></tr>")
+          window.$("#id-table").append("<tr><td colSpan='7'><h2>" + data.message + "</h2></td></tr>")
         }
         else {
           // console.log(data)
@@ -350,7 +350,7 @@ const Report1 = () => {
     // Initialize variables for count and total time
     var totalCount = 0;
     var totalSeconds = 0;
-    console.log("hi1")
+    // console.log("hi1")
 
     // Iterate through each row in the table (excluding the header row)
     for (let i = 1; i < table.rows.length; i++) {
@@ -362,16 +362,16 @@ const Report1 = () => {
 
       // Get the time and convert it to seconds
       var timeParts = row.cells[6].innerHTML.split(":");
-      console.log(timeParts, row)
+      // console.log(timeParts, row)
       var hours = parseInt(timeParts[0]);
       var minutes = parseInt(timeParts[1]);
       var seconds = parseInt(timeParts[2]);
       var timeInSeconds = (hours * 3600) + (minutes * 60) + seconds;
       totalSeconds += timeInSeconds;
-      console.log("totalSeconds")
+      // console.log("totalSeconds")
     }
-    console.log(totalCount)
-    console.log("hi2")
+    // console.log(totalCount)
+    // console.log("hi2")
 
 
     // Convert total time in seconds to "hh:mm:ss" format
@@ -379,14 +379,27 @@ const Report1 = () => {
 
     // Display the total count and total time in "hh:mm:ss" format in the console
     // console.log("Total Count: " + totalCount);
-    console.log("Total Time: " + formattedTime);
+    // console.log("Total Time: " + formattedTime);
     localStorage.setItem("time", formattedTime);
     localStorage.setItem("totalperson", totalCount);
   }
 
   // lastLine();
-
+  const cssss = {
+    // "width": "109px",
+    "borderRadius": "8px",
+    "border": "none",
+    "marginLeft": "70%",
+  }
+  const cssss2 = {
+    // "width": "109px",
+    "borderRadius": "8px",
+    "border": "none",
+    "marginLeft": "150%",
+    "visibility": "hidden"
+  }
   return (
+
     <div className='repo'>
       <section>
       </section>
@@ -403,7 +416,7 @@ const Report1 = () => {
           </div>
           <form>
 
-            <select id="selectMin" onChange={fun1}>
+            <select id="selectMin" onChange={fun1} style={cssss}>
               <option value="all">All</option>
               <option value="name">Name</option>
               <option value="department">Department</option>
@@ -417,7 +430,7 @@ const Report1 = () => {
 
           <form>
 
-            <select id="selectDay" onChange={days} style={{ "marginLeft": "60%", "visibility": "hidden" }}>
+            <select id="selectDay" onChange={days} style={cssss2}  >
               <option value="all">All</option>
               <option value="today">Today</option>
               <option value="last-7-days">last 7 days</option>

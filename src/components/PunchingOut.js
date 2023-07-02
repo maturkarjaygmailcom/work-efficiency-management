@@ -21,8 +21,8 @@ const PunchingOut = () => {
         // document.querySelector("#id-table").html("");               //empty search list
 
         var name = localStorage.getItem("name");
-        const res = await fetch('http://localhost/jay/api/api-fetch-all-facultydetail-in-punchingpage.php?sname=' + name)
-        const actualdata = await res.json();
+        const res = await fetch('http://localhost/jay/api/api-fetch-all-facultydetail-in-punchingpage.php?sname=' + name);
+        const actualdata = await res.json();                                                          // sname="+lat+"&param2="+lon
 
         // console.log(actualdata)
         setdata1(actualdata);
@@ -32,7 +32,7 @@ const PunchingOut = () => {
         // document.querySelector("#id-table").html("");               //empty search list
 
         var name = localStorage.getItem("name");
-        const res = await fetch('http://localhost/jay/api/api-fetch-all-punchDetail.php?sname=' + name)
+        const res = await fetch('http://localhost/jay/api/api-fetch-all-punchDetail.php?sname=' + name + '&sdate=' + todaydate)
         const actualdata = await res.json();
 
         // console.log(actualdata)
@@ -62,7 +62,7 @@ const PunchingOut = () => {
             data: jsonData,
             success: function (data) {
                 if (data.status === false) {
-                    window.$("#id-table1").append("<tr><td colspan='5'><h2>" + data.message + "</h2></td></tr>");
+                    window.$("#id-table1").append("<tr><td colSpan='5'><h2>" + data.message + "</h2></td></tr>");
                 }
                 else {
 
@@ -115,7 +115,7 @@ const PunchingOut = () => {
             success: function (data) {
                 if (data.status === false) {
                     // console.log(data)
-                    window.$("#id-table2").append("<tr><td colspan='3'><h2>" + "" + "</h2></td></tr>")
+                    window.$("#id-table2").append("<tr><td colSpan='3'><h2>" + "" + "</h2></td></tr>")
                 }
                 else {
 
@@ -167,8 +167,8 @@ const PunchingOut = () => {
 
             var obj2 = { sdate: todaydate, sname: name };
             var myJSON2 = JSON.stringify(obj2);
-            // console.log(myJSON2)
-            // console.log(obj2)
+            console.log(myJSON2)
+            console.log(obj2)
             window.$.ajax({
                 url: 'http://localhost/jay/api/api-check-already-exist-or-not.php',
                 type: "POST",
@@ -176,8 +176,8 @@ const PunchingOut = () => {
                 data: myJSON2,
                 success: function (data) {
                     console.log(data);
-                    console.log("aaaaaaaaa");
-
+                    console.log("seee");
+                    //true for data not getting
                     if (data.status === true) {
 
                         // namee = data[0].name;
@@ -193,8 +193,13 @@ const PunchingOut = () => {
                         // console.log("ghgkhjhkjhkjhkj");
                         // document.querySelector(".punchout").disabled = false;
 
-
+                        //forcely commenting updatetable()
                         updateTable();
+
+                        //and add insertIntoTable
+                        // insertIntoTable();
+
+
                         // loadtable2();
                         console.log(true)
 
@@ -292,6 +297,7 @@ const PunchingOut = () => {
                     // loadtable2();
                     getData2();
                     document.querySelector(".punchin").disabled = true;
+                    // document.getElementById("id-mainTable").style.visibility = "visible";
 
                 }
                 else {
@@ -416,13 +422,24 @@ const PunchingOut = () => {
 
 
 
-    var currentdate = new Date();
-    // // var datetime = "Last Sync: " + currentdate.getDate() + "/"
-    let day = currentdate.getDay()
-    let month = currentdate.getMonth()
-    let year = currentdate.getFullYear()
+    // var currentdate = new Date();
+    // // // var datetime = "Last Sync: " + currentdate.getDate() + "/"
+    // let day11 = currentdate.getDay()
+    // let month11 = currentdate.getMonth()
+    // let year11 = currentdate.getFullYear()
 
-    let todaydate = day + "/" + month + "/" + year
+    // let todaydate = day11 + "/" + month11 + "/" + year11
+    // // let todaydate = year + "-" + month + "-" + day
+    // console.log(todaydate)
+
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = (today.getMonth() + 1).toString().padStart(2, '0');
+    let day = today.getDate().toString().padStart(2, '0');
+
+    let todaydate = `${year}-${month}-${day}`;
+    // console.log(todaydate);
+
 
     return (
 
@@ -450,7 +467,7 @@ const PunchingOut = () => {
                         <tbody id="id-table">
 
                             {
-                                (data1.status === false) ? <tr><td colspan='7'><h2> Not found</h2></td></tr>
+                                (data1.status === false) ? <tr><td colSpan='7'><h2> Not found</h2></td></tr>
                                     :
                                     // document.querySelector("#id-table").html("");
                                     data1.map((val, inde) => {
@@ -508,7 +525,7 @@ const PunchingOut = () => {
                         <tbody id="id-table">
 
                             {
-                                (data2.status === false) ? <tr><td colspan='7'><h2> Not found</h2></td></tr>
+                                (data2.status === false) ? <tr><td colSpan='7'><h2> No Records</h2></td></tr>
                                     :
                                     // document.querySelector("#id-table").html("");
                                     data2.map((val, inde) => {
@@ -543,7 +560,7 @@ const PunchingOut = () => {
                     </table>
                 </section>
             </section>
-    
+
         </>
 
     )
