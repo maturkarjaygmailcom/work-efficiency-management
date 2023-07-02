@@ -11,6 +11,7 @@ const Report1 = () => {
 
   useEffect(() => {
     pageload();
+
     // lastLine();
     // document.getElementById("id-mainTable").style.visibility ="visible";
     // document.getElementById("id-search").focus();
@@ -33,7 +34,7 @@ const Report1 = () => {
 
 
   function tableToExcel() {
-    window.$("#id-fullTable").table2excel({
+    window.$("#id-fullTableRepo").table2excel({
       filename: "Reports.xls",
       name: "worksheet"
     })
@@ -96,7 +97,7 @@ const Report1 = () => {
 
 
   //page load fetch all data
-  function pageload() {
+  const pageload= ()=> {
     window.$("#id-table").html("");
     window.$.ajax({
       url: 'http://localhost/jay/api/api-fetch-all-report.php',

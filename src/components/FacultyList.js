@@ -87,7 +87,7 @@ const FacultyList = () => {
 
 
     //get total+1 value of feculty
-    function getMaxValOfFaculty() {
+    const getMaxValOfFaculty=()=> {
 
         window.$.ajax({
             url: 'http://localhost/jay/api/api-max-feculty.php',

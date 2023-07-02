@@ -12,7 +12,7 @@ const NavBar = (props) => {
       <header className="haderNav">
         <div className="navbar">
           <div className="logo"><a href="">Work-Efficiency</a></div>
-          <ul className="links" >
+          <ul className="links" id="ulLinks" style={{"display":props.val}}>
 
             <li className="nav-item">
               <NavLink  className="nav-link" to="/ActiveFacultyList" >ActiveFacultyList</NavLink>

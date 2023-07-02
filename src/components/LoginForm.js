@@ -44,14 +44,18 @@ const LoginForm=() => {
               if (value.password === password && value.password !== "") {
                 console.log(value.email, value.password)
                 console.log("w")
+                // document.getElementById("loginsys").visibility = "hidden";
+                document.getElementById("ulLinks").style.display = "block";
+                // ulElement.style.display = "block";
                 // document.location.href = "http://localhost/jay/html/fecultyList.html"
+
+                // locationToActivePage("/navBar")
                 locationToActivePage("/ActiveFacultyList")
 
                 
                 // document.getElementsByClassName("links").show();
                 // try
                 // document.getElementsByClassName("links").removeClass('visible').addClass('invisible');
-                // document.getElementsByClassName("links").visibility = "visible";
 
               }
             });
@@ -66,7 +70,7 @@ const LoginForm=() => {
     <>
 
 
-      <div className="box">
+      <div className="box" id="loginsys">
         <div className="container">
 
           <div className="top">

@@ -117,7 +117,7 @@ const ActiveFaculty = () => {
                         <tbody id="id-table">
 
                             {
-                                (data.status === false) ? <tr><td colSpan='7'><h2>Data  Not found</h2></td></tr>
+                                (data.status === false) ? <tr><td colSpan='7'><h2>No records</h2></td></tr>
                                     :
                                     // document.querySelector("#id-table").html("");
                                     data.map((val, inde) => {

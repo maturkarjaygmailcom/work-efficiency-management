@@ -17,7 +17,7 @@ function App() {
   console.log(val1);
   return (
     <>
-      <NavBar />
+      <NavBar val="none"/>
 
       {/* <LoginForm /> */}
       {/* <Registration /> */}
@@ -30,6 +30,7 @@ function App() {
 
       <Routes>
         <Route exact path="/" Component={LoginForm} />
+        <Route exact path="/navBar" Component={NavBar} />
         <Route exact path="/Reg" Component={Registration} />
         <Route exact path="/ActiveFacultyList" Component={ActiveFacultyList} />
         <Route exact path="/FacultyList" Component={FacultyList} />
