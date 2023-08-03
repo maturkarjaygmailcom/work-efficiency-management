@@ -11,21 +11,9 @@ const Report1 = () => {
 
   useEffect(() => {
     pageload();
-
-    // lastLine();
-    // document.getElementById("id-mainTable").style.visibility ="visible";
-    // document.getElementById("id-search").focus();
   }, [])
 
-  // window.$(document).ready(function () {
-  // pageload();
-
-
-  // document.body.style.backgroundImage = "url(../Image/1.jpg) center/ cover";
-  // document.body.style.backgroundPosition = "center";
-  //     document.body.style.display = "flex";
-  //     document.getElementById("id-mainTable").style.justifyContent= "center";
-  // document.body.style.backgroundSize = "cover";
+  
 
   window.$("#id-search").focus()
 

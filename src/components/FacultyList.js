@@ -47,7 +47,6 @@ const FacultyList = () => {
 
 
     const getData = async () => {
-        // document.querySelector("#id-table").html("");               //empty search list
 
         const res = await fetch('http://localhost/jay/api/api-fetch-all-fecultyList.php')
         const actualdata = await res.json();
@@ -60,16 +59,12 @@ const FacultyList = () => {
 
 
 
-    //   window.$("#id-lab-4").focus()
-    //searching..            
 
-    // window.$("#id-lab-4").on("keyup", testname4);
 
 
     async function searching1(e) {
         console.log(e.target.value)
         let searchval = e.target.value
-        // document.querySelector("#id-table").html("");               //empty search list
 
 
         if (searchval != "") {
@@ -356,12 +351,6 @@ const FacultyList = () => {
         <>
 
 
-            {/* <div id="autocomplete"> */}
-
-            {/* <div id="testlist4" className="list"></div>
-            </div> */}
-
-            {/* <input type="text" id="id-search" onKeyUp={searching1} className="testname" name="stestname4" placeholder="search here..." autoComplete="false" /> */}
 
 
             <section className="tableFaculty" id="id-mainTable">
@@ -371,9 +360,7 @@ const FacultyList = () => {
 
                     <div className="input-group">
                         <input type="search" placeholder="Search Data..." id="id-serach" className="testname" name="stestname4" onKeyUp={searching1} autoComplete='false' autoFocus />
-                         <img src='../Image/3.png' alt=""/> 
-
-                        {/* <img src='Image/3.png' alt="" /> */}
+                        
                     </div>
                     <button style={{ "marginInlineStart": "0px" }} id="btn-ins" className='btn btn-danger' onClick={btnInsert}> + </button>
                 </section>
@@ -412,7 +399,7 @@ const FacultyList = () => {
                                                 <td className='text-center'>{val.work}</td>
                                                 <td className='text-center'>{val.joingDate}</td>
                                                 <td className='text-center' ><button className="punch btn btn-primary" id={val.name} onClick={punchin} >Punch</button></td>
-                                                <td className='text-center' ><button className="edit btn btn-primary" id={val.name} onClick={showModelForEdit}>Insert</button></td>
+                                                <td className='text-center' ><button className="edit btn btn-primary" id={val.name} onClick={showModelForEdit}>Edit</button></td>
                                                 <td className='text-center' ><button className="delete btn btn-primary" id={val.name} onClick={deleteBtn}>Delete</button></td>
 
                                                 {/* <button className='punch'  id='" + value["name"] + "'>punch</button> */}
